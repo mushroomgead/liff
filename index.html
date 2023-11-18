@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="css/style.css" media="all">
 </head>
 <body>
-  <p id="os"><b>OSxxxxxxx!!!:</b> </p>
+  <p id="os"><b>OS:</b> </p>
   <p id="language"><b>Language:</b> </p>
   <p id="version"><b>Version:</b> </p>
   <p id="isInClient"><b>isInClient:</b> </p>
@@ -72,6 +72,11 @@
     }
 
     async function getUserProfile() {
+      const profile = await liff.getUserProfile()
+      document.getElementById("pictureUrl").src = profile.pictureUrl
+      document.getElementById("userId").src = profile.userId
+      document.getElementById("statusMessage").src = profile.statusMessage
+      document.getElementById("displayName").src = profile.displayName
     }
 
     function getEnvironment() {
@@ -93,7 +98,7 @@
     async function main() {
       await liff.init({ liffId: "2001737033-pqNj81Q0" })
       getEnvironment()
-      // getUserProfile()
+      getUserProfile()
       // getContext()
       // getFriendship()
       // createUniversalLink()
