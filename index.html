@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="css/style.css" media="all">
 </head>
 <body>
-  <p id="os"><b>OS!!:</b> </p>
+  <p id="os"><b>OS!!1:</b> </p>
   <p id="language"><b>Language:</b> </p>
   <p id="version"><b>Version:</b> </p>
   <p id="isInClient"><b>isInClient:</b> </p>
@@ -57,19 +57,15 @@
     }
 
     async function scanCode() {
+      const result = await liff.scanCode()
+      document.getElementById("scanCode").append(result.value)
     }
 
     function openWindow() {
     }
 
     async function getFriendship() {
-      const friend = await liff.getFriendship()
-      document.getElementById("friendship").append(friend.firendFlag)
-      if (!friend.firendFlag) {
-        if (confirm("you not friend yet, please add friend before.")) {
-          window.location = "https://line.me/R/ti/p/@178yfyoa"
-        }
-      }
+
     }
 
     async function sendMsg() {
@@ -128,7 +124,7 @@
       getEnvironment()
       getUserProfile()
       getContext()
-      getFriendship()
+      // getFriendship()
       // createUniversalLink()
     }
     main()
