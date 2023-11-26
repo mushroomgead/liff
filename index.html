@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,viewport-fit=cover">
   <title>My LIFF app</title>
   <link rel="stylesheet" href="css/style.css" media="all">
 </head>
+
 <body>
-  <p id="osddd"><b>เปลี่ยนละๆๆ 00:28 OS:</b> </p>
+  <p id="osddd"><b>OS:</b> </p>
   <p id="language"><b>Language:</b> </p>
   <p id="version"><b>Version:</b> </p>
   <p id="isInClient"><b>isInClient:</b> </p>
@@ -55,7 +57,8 @@
     }
 
     function closed() {
-      // liff.closeWindow()
+      liff.logout()
+      liff.closeWindow()
     }
 
     async function scanCode() {
@@ -104,7 +107,7 @@
       document.getElementById("userId").append(profile.userId)
       document.getElementById("statusMessage").append(profile.statusMessage)
       document.getElementById("displayName").append(profile.displayName)
-      document.getElementById("decodedIDToken").append(liff.getDecodedIDToken().email) 
+      document.getElementById("decodedIDToken").append(liff.getDecodedIDToken().email)
     }
 
     // function getEnvironment() {
@@ -124,7 +127,7 @@
     // }
 
     async function main() {
-      await liff.init({ liffId: "2001851050-Q84Bye9Y" })
+      await liff.init({ liffId: "2001737033-Zpj0YNdx" })
       document.getElementById("isLoggedIn").append(liff.isLoggedIn())
       if (liff.isLoggedIn()) {
         // getEnvironment()
@@ -139,4 +142,5 @@
     main()
   </script>
 </body>
+
 </html>
