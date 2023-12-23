@@ -8,7 +8,7 @@
 </head>
 
 <body>
-  <p id="os"><b>OSyyyy!:</b> </p>
+  <p id="os"><b>OSyyyyzzz!:</b> </p>
   <p id="language"><b>Language:</b> </p>
   <p id="version"><b>Version:</b> </p>
   <p id="isInClient"><b>isInClient:</b> </p>
@@ -43,7 +43,7 @@
     console.log("Hello World2!")
   </script>
 
-  <script src="https://static.line-scdn.net/liff/edge/versions/2.22.2/sdk.js"></script>
+  <script src="https://static.line-scdn.net/liff/edge/versions/2.22.4/sdk.js"></script>
   <script>
     function createUniversalLink() {
       const link1 = liff.permanentLink.createUrl()
@@ -152,7 +152,6 @@
           createUniversalLink()
         } else {
           liff.login()
-          window.location.reload();
         }
       })
       await liff.init({ liffId: "2001737033-pqNj81Q0" })
