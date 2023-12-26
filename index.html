@@ -8,7 +8,7 @@
 </head>
 
 <body>
-  <p id="os"><b>OS xxxxnew liff 2001981071-L0BERVRl:</b> </p>
+  <p id="os"><b>OS:</b> </p>
   <p id="language"><b>Language:</b> </p>
   <p id="version"><b>Version:</b> </p>
   <p id="isInClient"><b>isInClient:</b> </p>
@@ -73,8 +73,17 @@
     }
 
     async function scanCode() {
-      const result = await liff.scanCode()
-      document.getElementById("scanCode").append(result.value)
+      liff
+        .scanCodeV2()
+        .then((result) => {
+          console.log("result: ", result);
+          // result = { value: "" }
+        })
+        .catch((error) => {
+          console.log("error", error);
+        });
+      // const result = await liff.scanCode()
+      // document.getElementById("scanCode").append(result.value)
     }
 
     function openWindow() {
